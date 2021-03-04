@@ -1,28 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { WorkoutContext } from './App';
 import Day from './Day';
-import WorkoutList from './WorkoutList';
+import Button from './Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
-const Schedule = () => {
+
+const Schedule = ({ days }) => {
+  const { handleDayAdd } = useContext(WorkoutContext)
 
   return (
-    <div className="">
-      <Day day='Monday' focus='Legs'/>
-      <WorkoutList/>
-      {/*
-        <Day day='Tuesday' focus='Back & Shoulder'/>
-        <WorkoutList/>
-        <Day day='Wednesday' focus='Chest & Triceps'/>
-        <WorkoutList/>
-        <Day day='Thursday' focus='Legs'/>
-        <WorkoutList/>
-        <Day day='Friday' focus='Biceps'/>
-        <WorkoutList/>
-        <Day day='Saturday' focus='Full Body'/>
-        <WorkoutList/>
-        <Day day='Sunday' focus='Rest'/>
-        <WorkoutList/>
-      */}
-    </div>
+    <>
+      <div>
+        {days.map((day) => {
+          return (
+            <Day
+              key= {day.id}
+              {...day}
+            />
+          )
+        })}
+      </div>
+      <div className="flex flex-row justify-around items-center">
+      <Button text="ADD DAY" onClick={handleDayAdd}/>
+      </div>
+    </>
   )
 };
 
