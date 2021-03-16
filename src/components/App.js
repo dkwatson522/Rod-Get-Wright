@@ -39,6 +39,7 @@ function App() {
       focus: ''
     }
 
+    setSelectedDayId(newDay.id)
     setDays([...days, newDay])
   }
 
@@ -50,6 +51,7 @@ function App() {
   }
 
   const handleDaySelect = (id) => {
+    console.log(id)
     setSelectedDayId(id)
   }
 
@@ -61,12 +63,9 @@ function App() {
 
   return (
     <WorkoutContext.Provider value={workoutContextValue}>
-      <div className="flex flex-col justify-center items-center h-full my-6">
-        <h1 className="text-4xl my-4 font-extrabold underline">{title}</h1>
-        <Schedule
-          days={days}
-        />
-      </div>
+      <Schedule days={days}/>
+      {/*{selectedDay && <ScheduleEdit day={selectedDay}/>}*/}
+
     </WorkoutContext.Provider>
 
   );

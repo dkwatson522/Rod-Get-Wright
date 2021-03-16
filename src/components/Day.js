@@ -1,26 +1,29 @@
 import React, { useContext } from 'react';
 import Button from './Button';
+import Workout from './Workout';
+import { v4 as uuidv4 } from 'uuid';
 import { WorkoutContext } from './App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Day = (props) => {
   const { day, focus, id } = props;
-  const { handleDayDelete, handleDaySelect } = useContext(WorkoutContext)
-
+  const { handleDayDelete, handleDaySelect } = useContext(WorkoutContext);
 
   return (
-    <div>
-      <div className="text-xl flex flex-row justify-between items-center ">
-        <div className="mx-2 flex flex-row items-center">
-          <span>{day}</span><span> - </span><span>{focus}</span>
+    <div className="flex flex-col">
+      <div className="text-xl flex flex-col justify-between items-center ">
+        <div className="w-full flex flex-row items-center justify-start">
+          <p className="text-2xl font-semibold px-2">
+            {day} - {focus}
+          </p>
         </div>
-        <div className="mx-2 flex flex-row items-center">
+        <div className="w-full flex flex-row items-center justify-start">
           <Button onClick={() => handleDaySelect(id)} text="EDIT"/>
           <Button onClick={() => handleDayDelete(id)} text="DELETE"/>
-          <FontAwesomeIcon icon={faTrashAlt} className="text-red-500"/>
         </div>
       </div>
+      <Workout/>
     </div>
   );
 }
