@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import Schedule from './Schedule';
 import ScheduleEdit from './ScheduleEdit';
@@ -8,6 +8,8 @@ export const WorkoutContext = React.createContext();
 
 function App() {
   let title = 'Fit Fellas'
+
+
 
   const sampleDays = [
     {
@@ -61,10 +63,27 @@ function App() {
     handleDaySelect
   }
 
+  const LOCAL_STORAGE_KEY = 'fitFellas.days'
+
+// only runs when the page loads up because of empty array
+  useEffect(() => {
+    const daysJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
+    if( daysJSON != null ) {
+      setDays(JSON.parse(daysJSON))
+    }
+  },[])
+
+// only runs if there are changes made to the days component
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(days))
+  }, [days])
+
+
+
   return (
     <WorkoutContext.Provider value={workoutContextValue}>
       <Schedule days={days}/>
-      {/*{selectedDay && <ScheduleEdit day={selectedDay}/>}*/}
+      {selectedDay && <ScheduleEdit day={selectedDay}/>}
 
     </WorkoutContext.Provider>
 

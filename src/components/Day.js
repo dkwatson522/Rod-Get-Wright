@@ -11,14 +11,12 @@ const Day = (props) => {
   const { handleDayDelete, handleDaySelect } = useContext(WorkoutContext);
 
   return (
-    <div className="flex flex-col">
-      <div className="text-xl flex flex-col justify-between items-center ">
-        <div className="w-full flex flex-row items-center justify-start">
-          <p className="text-2xl font-semibold px-2">
-            {day} - {focus}
-          </p>
-        </div>
-        <div className="w-full flex flex-row items-center justify-start">
+    <div className="w-full flex flex-col">
+      <div className="flex flex-row items-center justify-between">
+        <p className="w-full text-2xl font-semibold px-2">
+          {day} - {focus}
+        </p>
+        <div className="w-full flex flex-col items-end">
           <Button onClick={() => handleDaySelect(id)} text="EDIT"/>
           <Button onClick={() => handleDayDelete(id)} text="DELETE"/>
         </div>

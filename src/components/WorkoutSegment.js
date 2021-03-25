@@ -13,9 +13,9 @@ const WorkoutSegment = ({}) => {
   const handleExerciseAdd = () => {
     const newExercise = {
       id: uuidv4(),
-      name: "back squat",
-      reps: "4x10",
-      weight: "185"
+      name: "New Exercise",
+      reps: "",
+      weight: ""
     }
     console.log(newExercise)
     setSelectedWorkoutId(newExercise.id)
@@ -32,9 +32,8 @@ const WorkoutSegment = ({}) => {
         })}
       </div>
       <div>
-        <input value={selectedWorkoutId} />
+        <input value= "exercise" />
       </div>
-      {selectedWorkoutId}
       <div className="w-full flex justify-start">
         <Button text="ADD WORKOUT" onClick={handleExerciseAdd}/>
       </div>

@@ -8,7 +8,7 @@ const Schedule = ({ days }) => {
   const { handleDayAdd } = useContext(WorkoutContext)
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-1/2 min-h-screen">
       <div>
         {days.map((day) => {
           return (
