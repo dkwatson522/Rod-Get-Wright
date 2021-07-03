@@ -1,30 +1,65 @@
-import React, { useContext } from 'react';
-import Button from './Button';
-import Workout from './Workout';
+import {useState, useEffect} from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { WorkoutContext } from './App';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import WorkoutPlan from './WorkoutPlan';
 
-const Day = (props) => {
-  const { day, focus, id } = props;
-  const { handleDayDelete, handleDaySelect } = useContext(WorkoutContext);
+const workoutDays = [
+  {
+    id: uuidv4(),
+    name: 'Monday',
+    focus: 'Rest'
+  },
+  {
+    id: uuidv4(),
+    name: 'Tuesday',
+    focus: 'Rest'
+  },
+  {
+    id: uuidv4(),
+    name: 'Wednesday',
+    focus: 'Rest'
+  },
+  {
+    id: uuidv4(),
+    name: 'Thursday',
+    focus: 'Rest'
+  },
+  {
+    id: uuidv4(),
+    name: 'Friday',
+    focus: 'Rest'
+  },
+  {
+    id: uuidv4(),
+    name: 'Saturday',
+    focus: 'Rest'
+  },
+  {
+    id: uuidv4(),
+    name: 'Sunday',
+    focus: 'Rest'
+  }
+]
+
+
+
+export default function Day({handleModalToggle}) {
+  const [days, setDays] = useState(workoutDays)
 
   return (
-    <div className="w-full flex flex-col">
-      <div className="flex flex-row items-center justify-between">
-        <p className="w-full text-2xl font-semibold px-2">
-          {day} - {focus}
-        </p>
-        <div className="w-full flex flex-col items-end">
-          <Button onClick={() => handleDaySelect(id)} text="EDIT"/>
-          <Button onClick={() => handleDayDelete(id)} text="DELETE"/>
+    <div>
+      {days.map((day) =>
+        <div className="border-4 rounded-sm m-2 p-4" key={day.id} >
+          <h3
+          className="text-xl font-bold"
+          >
+            {day.name} -
+            <span className="p-1 mx-1 bg-red-300 rounded-md" >
+              {day.focus}
+            </span>
+          </h3>
+          <WorkoutPlan handleModalToggle={handleModalToggle}/>
         </div>
-      </div>
-      <Workout/>
+      )}
     </div>
-  );
+  )
 }
-
-
-export default Day
