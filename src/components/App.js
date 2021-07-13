@@ -6,8 +6,6 @@ import '../App.css';
 
 export const WorkoutContext = React.createContext();
 
-// const LOCAL_STRAGE_KEY = 'getFitness.workouts'
-
 const workoutDays = [
   {
     id: uuidv4(),
@@ -186,9 +184,33 @@ export default function App() {
     setDays(newDays)
   }
 
+  const handleDayClear = (id) => {
+    const newDays = [...days]
+    const index = newDays.findIndex(r => r.id === id)
+    newDays[index] = {
+      id: uuidv4(),
+      name: newDays[index].name,
+      focus: 'Rest',
+      exercises: [
+        {
+          workout: '',
+          description: '',
+          id: uuidv4()
+        }
+      ]
+    }
+    setDays(newDays)
+  }
+
+  const handleScheduleClear = () => {
+    setDays(resetSchedule)
+  }
+
   const recipeContextValue = {
     handleDaySelect,
     handleDayChange,
+    handleDayClear,
+    handleScheduleClear,
     handleModalOpen,
     handleModalClose
   }
@@ -222,3 +244,91 @@ export default function App() {
     </DayContext.Provider>
   )
 }
+
+
+const resetSchedule = [
+  {
+    id: uuidv4(),
+    name: 'Monday',
+    focus: 'Rest',
+    exercises: [
+      {
+        workout: '',
+        description: '',
+        id: uuidv4()
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
+    name: 'Tuesday',
+    focus: 'Rest',
+    exercises: [
+      {
+        workout: '',
+        description: '',
+        id: uuidv4()
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
+    name: 'Wednesday',
+    focus: 'Rest',
+    exercises: [
+      {
+        workout: '',
+        description: '',
+        id: uuidv4()
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
+    name: 'Thursday',
+    focus: 'Rest',
+    exercises: [
+      {
+        workout: '',
+        description: '',
+        id: uuidv4()
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
+    name: 'Friday',
+    focus: 'Rest',
+    exercises: [
+      {
+        workout: '',
+        description: '',
+        id: uuidv4()
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
+    name: 'Saturday',
+    focus: 'Rest',
+    exercises: [
+      {
+        workout: '',
+        description: '',
+        id: uuidv4()
+      }
+    ]
+  },
+  {
+    id: uuidv4(),
+    name: 'Sunday',
+    focus: 'Rest',
+    exercises: [
+      {
+        workout: '',
+        description: '',
+        id: uuidv4()
+      }
+    ]
+  }
+]
