@@ -29,7 +29,6 @@ export default function Day(props) {
               {focus}
             </span>
           </div>
-
         </div>
         <ul className="p-2 divide-y divide-gray-200">
           {exercises.map(exercise => {
@@ -55,7 +54,7 @@ export default function Day(props) {
             className="relative inline-flex items-center mx-2 px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-800 bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
             onClick = {() => handleDaySelect(id)}
           >
-            Edit Day
+            Edit {name}
           </button>
         </div>
       </div>

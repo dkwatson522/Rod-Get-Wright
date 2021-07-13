@@ -192,11 +192,7 @@ export default function App() {
       name: newDays[index].name,
       focus: 'Rest',
       exercises: [
-        {
-          workout: '',
-          description: '',
-          id: uuidv4()
-        }
+
       ]
     }
     setDays(newDays)
@@ -222,7 +218,7 @@ export default function App() {
         <div className="bg-yellow-600 pb-32">
           <header className="py-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h1 className="text-3xl font-bold text-white">Get Fit - Daily Workout Schedule</h1>
+              <h1 className="text-3xl font-bold text-white">Get Fit - Weekly Workout Schedule</h1>
             </div>
           </header>
         </div>
@@ -252,11 +248,7 @@ const resetSchedule = [
     name: 'Monday',
     focus: 'Rest',
     exercises: [
-      {
-        workout: '',
-        description: '',
-        id: uuidv4()
-      }
+
     ]
   },
   {
@@ -264,11 +256,7 @@ const resetSchedule = [
     name: 'Tuesday',
     focus: 'Rest',
     exercises: [
-      {
-        workout: '',
-        description: '',
-        id: uuidv4()
-      }
+
     ]
   },
   {
@@ -276,11 +264,7 @@ const resetSchedule = [
     name: 'Wednesday',
     focus: 'Rest',
     exercises: [
-      {
-        workout: '',
-        description: '',
-        id: uuidv4()
-      }
+
     ]
   },
   {
@@ -288,11 +272,7 @@ const resetSchedule = [
     name: 'Thursday',
     focus: 'Rest',
     exercises: [
-      {
-        workout: '',
-        description: '',
-        id: uuidv4()
-      }
+
     ]
   },
   {
@@ -300,11 +280,7 @@ const resetSchedule = [
     name: 'Friday',
     focus: 'Rest',
     exercises: [
-      {
-        workout: '',
-        description: '',
-        id: uuidv4()
-      }
+
     ]
   },
   {
@@ -312,11 +288,7 @@ const resetSchedule = [
     name: 'Saturday',
     focus: 'Rest',
     exercises: [
-      {
-        workout: '',
-        description: '',
-        id: uuidv4()
-      }
+
     ]
   },
   {
@@ -324,11 +296,7 @@ const resetSchedule = [
     name: 'Sunday',
     focus: 'Rest',
     exercises: [
-      {
-        workout: '',
-        description: '',
-        id: uuidv4()
-      }
+
     ]
   }
 ]
