@@ -19,8 +19,8 @@ export default function DayEdit (props) {
 
   const handleExerciseAdd = () => {
     const newExercise = {
-      workout: "Pushups",
-      description: "3x10",
+      workout: "",
+      description: "",
       id: uuidv4()
     }
 
