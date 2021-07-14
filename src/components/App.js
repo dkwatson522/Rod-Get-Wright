@@ -214,7 +214,7 @@ export default function App() {
 
   return (
     <DayContext.Provider value={recipeContextValue}>
-      <div className="min-h-screen bg-gray-700">
+      <div className="font-mono min-h-screen bg-gray-700">
         <div className="bg-yellow-600 pb-32">
           <header className="py-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

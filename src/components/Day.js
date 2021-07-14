@@ -17,7 +17,7 @@ export default function Day(props) {
 
   return (
     <div>
-      <div className="bg-gray-400 rounded-lg m-2 p-4">
+      <div className="bg-gray-400 rounded-sm m-2 p-4">
         <div
         className="flex justify-between items-center text-xl font-bold"
         >
@@ -44,14 +44,14 @@ export default function Day(props) {
         <div className="flex justify-center relative z-0">
           <button
             type="button"
-            className="relative inline-flex items-center mx-2 px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-800 bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+            className="relative inline-flex items-center mx-2 px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-sm text-gray-800 bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
             onClick = {() => handleDayClear(id)}
           >
             Clear {name}
           </button>
           <button
             type="button"
-            className="relative inline-flex items-center mx-2 px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-800 bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+            className="relative inline-flex items-center mx-2 px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-sm text-gray-800 bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
             onClick = {() => handleDaySelect(id)}
           >
             Edit {name}
